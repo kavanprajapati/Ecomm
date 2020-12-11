@@ -37,6 +37,18 @@
         height: 500px;
         padding-top: 100px;
     }
+
+    img.slider-image {
+        height: 400px !important;
+    }
+
+    .custom-product {
+        height: 600px;
+    }
+
+    .slider-text {
+        background-color: #24465454 !important;
+    }
 </style>
 
 </html>
