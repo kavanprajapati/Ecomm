@@ -63,6 +63,10 @@
     .trending-wrapper{
         margin: 20px;
     }
+
+    .detail-image{
+        height: 200px;
+    }
 </style>
 
 </html>
