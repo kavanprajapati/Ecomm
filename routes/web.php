@@ -25,3 +25,4 @@ Route::post("/login",[UserController::class,'login']);
 Route::get("/",[ProductController::class,'index']);
 Route::get("detail/{id}",[ProductController::class,'detail']);
 Route::post("search",[ProductController::class,'search']);
+Route::post("add_to_cart",[ProductController::class,'addToCart']);
