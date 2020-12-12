@@ -75,4 +75,16 @@ class ProductController extends Controller
         Session::flash('message', "Product removed from cart.");
         return Redirect::back();
     }
+
+    public function orderNow()
+    {
+        $userid= Session::get('user')->id;
+        $total_price =  DB::table('cart')
+                      ->join('products','cart.product_id','products.id')
+                      ->select('products.*','cart.id as cartid')
+                      ->where('cart.user_id',$userid)
+                      ->sum('products.price');
+  
+        return view('ordernow',compact('total_price'));        
+    }
 }
