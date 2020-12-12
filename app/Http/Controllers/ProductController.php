@@ -7,6 +7,8 @@ use App\Models\Product;
 use App\Models\Cart;
 use Session;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+
 
 class ProductController extends Controller
 {
@@ -60,10 +62,17 @@ class ProductController extends Controller
       $userid= Session::get('user')->id;
       $cartdata =  DB::table('cart')
                     ->join('products','cart.product_id','products.id')
-                    ->select('products.*')
+                    ->select('products.*','cart.id as cartid')
                     ->where('cart.user_id',$userid)
                     ->get();
 
       return view('cartlist',compact('cartdata'));
+    }
+
+    public function removeFromCart($id)
+    {
+        Cart::destroy($id);
+        Session::flash('message', "Product removed from cart.");
+        return Redirect::back();
     }
 }
