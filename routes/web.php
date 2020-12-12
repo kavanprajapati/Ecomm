@@ -28,4 +28,3 @@ Route::get("detail/{id}",[ProductController::class,'detail']);
 Route::post("search",[ProductController::class,'search']);
 Route::post("add_to_cart",[ProductController::class,'addToCart']);
 Route::get("cartlist",[ProductController::class,'cartlist']);
-Route::get("removefromcart/{id}",[ProductController::class,'removeFromCart']);

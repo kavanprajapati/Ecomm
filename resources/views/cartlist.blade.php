@@ -2,9 +2,6 @@
 
 @section('content')
 
-@if (Session::has('message'))
-   <div class="alert alert-info">{{ Session::get('message') }}</div>
-@endif
 <div class="custom-product">
     <div class="col-sm-10">
         <div class="trending-wrapper">
@@ -24,7 +21,7 @@
                         </div>
                     </div>
                     <div class="col-sm-3">
-                       <a href="/removefromcart/{{$product->cartid}}" class="btn btn-warning">Remove From Cart</a>
+                       <button class="btn btn-warning">Remove From Cart</button>
                     </div>
                 </div>
                 @endforeach
